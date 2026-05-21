@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+<defs>
+<linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c6a57"/><stop offset="1" stop-color="#1b4a3e"/></linearGradient>
+<radialGradient id="bg" cx="0.5" cy="0.3" r="0.8"><stop offset="0" stop-color="#15453a"/><stop offset="1" stop-color="#0a1f1a"/></radialGradient>
+</defs>
+<circle cx="100" cy="100" r="92" fill="url(#bg)"/>
+<circle cx="100" cy="100" r="92" fill="none" stroke="#34a596" stroke-width="3"/>
+<circle cx="100" cy="100" r="78" fill="none" stroke="#74ccbe" stroke-width="1" stroke-opacity="0.4"/>
+<g transform="translate(100,98)">
+<path d="M0 36 C-28 18 -32 -20 0 -42 C32 -20 28 18 0 36Z" fill="url(#lg)"/>
+<path d="M0 32 C0 6 0 -22 0 -38" stroke="#d9efe7" stroke-width="2.4" fill="none" opacity="0.85"/>
+<path d="M0 6 L-14 -6 M0 -10 L13 -20 M0 -24 L-11 -32" stroke="#d9efe7" stroke-width="1.8" opacity="0.7"/>
+<path d="M-46 42 Q0 30 46 42" stroke="#74ccbe" stroke-width="3" fill="none" opacity="0.85"/>
+<path d="M-42 50 Q0 40 42 50" stroke="#74ccbe" stroke-width="2" fill="none" opacity="0.5"/>
+<circle cx="22" cy="-30" r="3" fill="#d9efe7" opacity="0.6"/><circle cx="-26" cy="-14" r="2.4" fill="#d9efe7" opacity="0.5"/>
+</g>
+<text x="100" y="152" text-anchor="middle" fill="#74ccbe" font-family="Georgia,serif" font-size="30" font-weight="bold" letter-spacing="2">RONAC</text>
+</svg>
