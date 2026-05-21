@@ -6,7 +6,7 @@
 
 backend:
   name: github
-  repo: USER/REPO            # <-- COMPLETEAZĂ: ex. alexracovita/ronac
+  repo: racovitacristian-commits/ronac            # <-- COMPLETEAZĂ: ex. alexracovita/ronac
   branch: main
   # Worker OAuth gratuit (Cloudflare). Vezi README, secțiunea „Login".
   base_url: https://sveltia-cms-auth.racovitacristian.workers.dev/   # <-- COMPLETEAZĂ
