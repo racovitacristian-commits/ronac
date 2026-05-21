@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title or (site.title + " — " + site.tagline) }}</title>
+<meta name="description" content="{{ description or site.tagline }}">
+<meta property="og:title" content="{{ title or site.title }}">
+<meta property="og:description" content="{{ description or site.tagline }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}/assets/img/placeholder-hero.svg">
+<meta name="theme-color" content="#15201a">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+{% include "partials/header.njk" %}
+
+{{ content | safe }}
+
+{% include "partials/footer.njk" %}
+
+<div class="cookie" role="dialog" aria-label="Cookies">
+  <p>Folosim cookie-uri pentru a îmbunătăți experiența pe site. Continuarea navigării implică acceptarea lor.</p>
+  <button class="btn btn--gold" data-cookie="accept">Accept</button>
+  <button class="btn btn--ghost btn--on-dark" data-cookie="reject">Refuz</button>
+</div>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

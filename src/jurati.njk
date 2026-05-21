@@ -1,0 +1,17 @@
+---
+layout: base.njk
+permalink: /jurati.html
+title: "Jurați — RONAC by Aquatia 2026"
+description: "Juriul internațional al concursului național de aquascaping RONAC 2026."
+---
+{% from "partials/macros.njk" import pagehead, judgeCard %}
+{{ pagehead('<a href="/">Acasă</a> &nbsp;/&nbsp; Jurați', "Juriul ediției 2026", judges.intro) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid-3 reveal">
+      {%- for j in judges.list -%}{{ judgeCard(j) }}{%- endfor -%}
+    </div>
+    <div class="callout" style="max-width:760px;margin:2.6rem auto 0"><b>Notă:</b> editează juriul din panoul <a href="/admin/">/admin</a> → „Jurați (ediția curentă)". Fiecare jurat are nume, țară, rol și fotografie.</div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+{
+  "year": "2026",
+  "ordinal": "Ediția a VIII-a · 2026",
+  "category": "Stil Nature",
+  "heroTitlePre": "Romanian National",
+  "heroTitleEm": "Aquascaping",
+  "heroTitlePost": "Contest",
+  "heroCopy": "Cel mai mare concurs de aquascaping din România revine. O singură categorie — Nature — premiile cele mai mari din țară și un juriu format din profesioniști de top din Europa. Fără taxă de înscriere.",
+  "heroImage": "/assets/img/placeholder-hero.svg",
+  "countdownDeadline": "2026-10-15T23:59:00",
+  "facts": [
+    { "value": "0 RON", "label": "Taxă înscriere" },
+    { "value": "Nature", "label": "Categorie unică" },
+    { "value": "8 ediții", "label": "De tradiție" },
+    { "value": "EU", "label": "Juriu profesionist" }
+  ],
+  "aboutHeading": "Arta de a recrea natura sub apă",
+  "aboutLead": "RONAC este concursul național organizat de pasionații de acvaristică din România, cu sprijinul unor companii de prestigiu din domeniu. Promovarea aquascaping-ului este misiunea noastră principală.",
+  "aboutBody": "Aquascaperii din România au dovedit talent și dragoste pentru competiție prin numărul mare de participanți la concursurile internaționale. Scopul nostru este să încurajăm și să inspirăm cât mai mulți oameni să se alăture lumii aquascaping-ului — celebrând legătura dintre om și natură.",
+  "aboutImage": "/assets/img/placeholder-scape.svg",
+  "steps": [
+    { "title": "Creează", "text": "Construiește un acvariu în stil Nature respectând dimensiunile din regulament." },
+    { "title": "Fotografiază", "text": "Realizează fotografia finală a layout-ului conform specificațiilor tehnice." },
+    { "title": "Înscrie", "text": "Trimite lucrarea online, gratuit, înainte de data limită a ediției 2026." },
+    { "title": "Jurizare", "text": "Juriul internațional evaluează lucrările, iar câștigătorii sunt premiați." }
+  ],
+  "prizesNote": "Mulțumită sponsorilor noștri, podiumul RONAC oferă recompense de top. Valorile de mai jos sunt orientative — actualizează-le pentru ediția 2026.",
+  "prizes": [
+    { "place": "II", "label": "Premiul 2", "sub": "Loc secund" },
+    { "place": "I", "label": "Marele Premiu", "sub": "Câștigătorul ediției" },
+    { "place": "III", "label": "Premiul 3", "sub": "Loc trei" }
+  ]
+}

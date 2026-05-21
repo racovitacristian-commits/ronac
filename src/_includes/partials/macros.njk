@@ -1,0 +1,47 @@
+{% macro pagehead(crumbsHtml, title, sub, extra="") %}
+<section class="pagehead">
+  <div class="wrap">
+    <p class="crumbs">{{ crumbsHtml | safe }}</p>
+    <span class="eyebrow line">RONAC 2026</span>
+    <h1>{{ title }}</h1>
+    {% if sub %}<p>{{ sub }}</p>{% endif %}
+    {{ extra | safe }}
+  </div>
+</section>
+<div class="folk-band folk-band--ox"></div>
+{% endmacro %}
+
+{% macro judgeCard(j) %}
+<article class="card person reveal">
+  <span class="ornament tl" style="top:8px;left:8px"></span>
+  <img src="{{ j.photo }}" alt="{{ j.name }}">
+  <div class="card__body">
+    <span class="card__meta">{{ j.role }}</span>
+    <h3>{{ j.name }}</h3>
+    <p class="card__country">{{ j.country }}</p>
+  </div>
+</article>
+{% endmacro %}
+
+{% macro sponsorCell(s) %}
+<a href="{{ s.url or '#' }}" title="{{ s.name }}"{% if s.url and s.url != '#' %} target="_blank" rel="noopener"{% endif %}><img src="{{ s.logo }}" alt="{{ s.name }}"></a>
+{% endmacro %}
+
+{% macro galleryFig(g) %}
+<figure>
+  <img src="{{ g.image }}" alt="Lucrare {{ g.position }}" loading="lazy">
+  <figcaption><span>{{ g.author }}</span><span class="pos">{{ g.position }}</span></figcaption>
+</figure>
+{% endmacro %}
+
+{% macro podium(prizes) %}
+<div class="podium reveal" style="margin-top:2.6rem;max-width:820px;margin-inline:auto">
+  {%- for p in prizes -%}
+  <div class="place{% if p.place == 'I' %} place--1{% endif %}">
+    <div class="rank">{{ p.place }}</div>
+    <div class="amount">{{ p.label }}</div>
+    <div class="lbl">{{ p.sub }}</div>
+  </div>
+  {%- endfor -%}
+</div>
+{% endmacro %}

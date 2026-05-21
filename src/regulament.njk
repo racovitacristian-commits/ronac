@@ -1,0 +1,45 @@
+---
+layout: base.njk
+permalink: /regulament.html
+title: "Regulament — RONAC by Aquatia 2026"
+description: "Regulamentul oficial al concursului național de aquascaping RONAC 2026: categorie, dimensiuni, jurizare, calendar și premii."
+---
+{% from "partials/macros.njk" import pagehead %}
+{{ pagehead('<a href="/">Acasă</a> &nbsp;/&nbsp; Regulament', "Regulamentul concursului", regulament.intro) }}
+
+<section class="section">
+  <div class="wrap prose reveal">
+
+    {% if regulament.editorNote %}<div class="callout"><b>Notă pentru organizator:</b> {{ regulament.editorNote }}</div>{% endif %}
+
+    {%- for s in regulament.sections -%}
+    <h2>{{ s.heading }}</h2>
+    {{ s.body | markdown | safe }}
+    {%- endfor -%}
+
+    <h2 id="inscriere">Înscriere</h2>
+    <p>{{ regulament.registerNote }}</p>
+    <div class="callout"><b>Înscriere ediția 2026:</b> formularul va fi disponibil aici. Până atunci, ne poți scrie prin <a href="/contact.html">pagina de contact</a>.</div>
+    <a class="btn btn--primary" href="/contact.html">Solicită link de înscriere</a>
+
+    <h2 id="calendar">Calendar</h2>
+    <div class="timeline">
+      {%- for c in regulament.calendar -%}
+      <div class="step"><div class="date">{{ c.label }}</div><p>{{ c.text }}</p></div>
+      {%- endfor -%}
+    </div>
+
+    <h2 id="premii">Premii</h2>
+    <p>Premiile RONAC sunt cele mai mari din România, oferite cu sprijinul sponsorilor. <em>Completează valorile finale pentru ediția 2026.</em></p>
+    <ul class="bullets">
+      {%- for p in regulament.prizes -%}
+      <li><strong>{{ p.place }}</strong> — {{ p.label }}.</li>
+      {%- endfor -%}
+    </ul>
+
+    <div class="center" style="margin-top:2.4rem">
+      <a class="btn btn--gold" href="{{ regulament.pdfUrl or '#' }}">Descarcă regulamentul (PDF)</a>
+      <p style="font-size:.85rem;color:var(--ink-soft);margin-top:.6rem"><em>Înlocuiește linkul cu fișierul PDF oficial.</em></p>
+    </div>
+  </div>
+</section>

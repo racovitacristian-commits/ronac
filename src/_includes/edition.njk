@@ -1,0 +1,84 @@
+---
+layout: base.njk
+---
+{% from "partials/macros.njk" import judgeCard, sponsorCell, galleryFig, podium %}
+
+<section class="pagehead">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Acasă</a> &nbsp;/&nbsp; <a href="/arhiva.html">Arhivă</a> &nbsp;/&nbsp; {{ year }}</p>
+    <span class="eyebrow line">{{ ordinal }}</span>
+    <h1>RONAC {{ year }}</h1>
+    <p>Recapitulare completă a ediției {{ year }}: juriul, sponsorii{% if hasPrizes %}, premiile{% endif %} și galeria lucrărilor înscrise.</p>
+    <div class="center" style="margin-top:1.4rem">
+      <a class="btn btn--ghost" href="#jurati" style="padding:.5rem 1rem;font-size:.85rem">Jurați</a>
+      <a class="btn btn--ghost" href="#sponsori" style="padding:.5rem 1rem;font-size:.85rem">Sponsori</a>
+      {% if hasPrizes %}<a class="btn btn--ghost" href="#premii" style="padding:.5rem 1rem;font-size:.85rem">Premii</a>{% endif %}
+      <a class="btn btn--ghost" href="#rezultate" style="padding:.5rem 1rem;font-size:.85rem">Rezultate</a>
+    </div>
+  </div>
+</section>
+<div class="folk-band folk-band--ox"></div>
+
+<section class="section section--tight">
+  <div class="wrap">
+    {% if editorNote %}<div class="callout" style="max-width:760px;margin:0 auto 2rem"><b>Arhivă editabilă:</b> {{ editorNote }}</div>{% endif %}
+    <div class="split reveal">
+      <div class="split__media"><span class="ornament tl"></span><span class="ornament br"></span>
+        <img src="{{ cover }}" alt="RONAC {{ year }}"></div>
+      <div>
+        <span class="eyebrow">Despre ediție</span>
+        <h2 class="h-lg" style="margin:.5rem 0 .8rem">{{ ordinal }} a concursului</h2>
+        <div class="prose">{{ content | safe }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="folk-rule"></div>
+
+<section class="section" id="jurati">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Juriu {{ year }}</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Jurați</h2></div>
+    <div class="grid grid-4 reveal" style="margin-top:2.2rem">
+      {%- for j in judges -%}{{ judgeCard(j) }}{%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-2)" id="sponsori">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Susținut de</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Sponsori {{ year }}</h2></div>
+    <div class="logos cols-5 reveal" style="margin-top:2rem">{%- for s in sponsors -%}{{ sponsorCell(s) }}{%- endfor -%}</div>
+  </div>
+</section>
+
+{% if hasPrizes and prizes %}
+<section class="section" id="premii">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Premii</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Premiile ediției {{ year }}</h2></div>
+    {{ podium(prizes) }}
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="rezultate">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Galerie</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Rezultate &amp; lucrări înscrise</h2>
+      <p class="lead" style="margin-inline:auto">Lucrările premiate și înscrise în ediția {{ year }}.</p></div>
+    <div class="gallery reveal" style="margin-top:2.4rem">
+      {%- for g in gallery -%}{{ galleryFig(g) }}{%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap reveal">
+    <h2>Vezi ediția curentă</h2>
+    <p>Concursul continuă în {{ edition.year }}, sub umbrela Aquatia. Înscrierea este gratuită.</p>
+    <a class="btn btn--gold" href="{{ site.registerUrl }}">Înscrie-te în {{ edition.year }}</a>
+  </div>
+</section>

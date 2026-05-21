@@ -1,0 +1,138 @@
+---
+layout: base.njk
+permalink: /index.html
+title: "RONAC by Aquatia — Romanian National Aquascaping Contest 2026"
+description: "Concursul național de aquascaping din România. Ediția 2026, stil Nature, fără taxă de înscriere, juriu internațional și cele mai mari premii din țară."
+---
+{% from "partials/macros.njk" import judgeCard, sponsorCell, podium %}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__text reveal">
+      <span class="hero__edition"><span class="dot"></span>{{ edition.ordinal }} &nbsp;|&nbsp; {{ edition.category }}</span>
+      <h1>{{ edition.heroTitlePre }} <em>{{ edition.heroTitleEm }}</em> {{ edition.heroTitlePost }}</h1>
+      <p class="hero__sub">{{ site.brandName }} <span class="hero__by">× {{ site.brandSub }}</span></p>
+      <p class="hero__copy">{{ edition.heroCopy }}</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="{{ site.registerUrl }}">Înscrie-te gratuit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost btn--on-dark" href="/regulament.html">Vezi regulamentul</a>
+      </div>
+      <div class="countdown" data-countdown="{{ edition.countdownDeadline }}">
+        <div class="unit"><b data-d>00</b><span>zile</span></div>
+        <div class="unit"><b data-h>00</b><span>ore</span></div>
+        <div class="unit"><b data-m>00</b><span>min</span></div>
+        <div class="unit"><b data-s>00</b><span>sec</span></div>
+      </div>
+    </div>
+    <div class="hero__art reveal">
+      <div class="hero__frame">
+        <img src="{{ edition.heroImage }}" alt="Aquascape câștigător RONAC">
+      </div>
+      <div class="hero__badge"><b>{{ edition.year }}</b><span>Ediția națională</span></div>
+    </div>
+  </div>
+</section>
+<div class="folk-band folk-band--ox"></div>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="factstrip reveal">
+      {%- for f in edition.facts -%}
+      <div><b>{{ f.value }}</b><span>{{ f.label }}</span></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="split__media reveal">
+      <span class="ornament tl"></span><span class="ornament br"></span>
+      <img src="{{ edition.aboutImage }}" alt="Aquascape în stil Nature">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Despre concurs</span>
+      <h2 class="h-xl" style="margin:.6rem 0 1rem">{{ edition.aboutHeading }}</h2>
+      <p class="lead">{{ edition.aboutLead }}</p>
+      <p>{{ edition.aboutBody }}</p>
+      <a class="btn btn--ghost" href="/echipa.html" style="margin-top:.6rem">Cunoaște echipa</a>
+    </div>
+  </div>
+</section>
+
+<div class="folk-rule"></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal" style="max-width:60ch;margin-inline:auto">
+      <span class="eyebrow line">Cum participi</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Patru pași până în concurs</h2>
+    </div>
+    <div class="grid grid-4" style="margin-top:2.6rem">
+      {%- for s in edition.steps -%}
+      <div class="feature reveal"><span class="num">{{ loop.index }}</span><div><h3>{{ s.title }}</h3><p>{{ s.text }}</p></div></div>
+      {%- endfor -%}
+    </div>
+    <div class="center" style="margin-top:2.4rem">
+      <a class="btn btn--primary" href="{{ site.registerUrl }}">Începe înscrierea</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Premii</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Cele mai mari premii din România</h2>
+      <p class="lead" style="margin-inline:auto">{{ edition.prizesNote }}</p>
+    </div>
+    {{ podium(edition.prizes) }}
+    <div class="center" style="margin-top:2.4rem"><a class="btn btn--ghost" href="/regulament.html#premii">Detalii premii</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Juriu</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Evaluat de profesioniști</h2></div>
+    <div class="grid grid-4" style="margin-top:2.4rem">
+      {%- for j in judges.list | default([]) -%}
+        {%- if loop.index <= 4 -%}{{ judgeCard(j) }}{%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="center" style="margin-top:2.4rem"><a class="btn btn--ghost" href="/jurati.html">Vezi tot juriul</a></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Susținut de</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Sponsori &amp; parteneri</h2></div>
+    <div class="logos cols-5 reveal" style="margin-top:2rem">
+      {%- for s in sponsors.list -%}{%- if loop.index <= 10 -%}{{ sponsorCell(s) }}{%- endif -%}{%- endfor -%}
+    </div>
+    <div class="center" style="margin-top:2.4rem"><a class="btn btn--ghost" href="/sponsori.html">Toți sponsorii</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Arhivă</span>
+      <h2 class="h-xl" style="margin:.6rem 0">Edițiile trecute</h2>
+      <p class="lead" style="margin-inline:auto">Sponsori, jurați, premii și galeriile foto ale fiecărei ediții — păstrate integral.</p></div>
+    <div class="grid grid-3 reveal" style="margin-top:2.4rem">
+      {%- for ed in collections.editions -%}{%- if loop.index <= 3 -%}
+      <a class="edition-card" href="{{ ed.url }}"><img src="{{ ed.data.cover }}" alt="RONAC {{ ed.data.year }}"><div class="meta"><div class="ed">Ediție trecută</div><div class="yr">{{ ed.data.year }}</div></div></a>
+      {%- endif -%}{%- endfor -%}
+    </div>
+    <div class="center" style="margin-top:2.4rem"><a class="btn btn--ghost" href="/arhiva.html">Toată arhiva</a></div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap reveal">
+    <h2>Ești gata să intri în concurs?</h2>
+    <p>Înscrierea este gratuită. Arată lumii ce poți crea sub apă și concurează pentru cele mai mari premii din România.</p>
+    <a class="btn btn--gold" href="{{ site.registerUrl }}">Înscrie-te în ediția {{ edition.year }}</a>
+  </div>
+</section>

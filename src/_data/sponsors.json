@@ -1,0 +1,21 @@
+{
+  "intro": "Premiile RONAC sunt posibile datorită sprijinului unor companii de prestigiu din domeniu. Le mulțumim!",
+  "list": [
+    { "name": "Partener principal 1", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "principal" },
+    { "name": "Partener principal 2", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "principal" },
+    { "name": "Partener principal 3", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "principal" },
+    { "name": "Sponsor 1", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 2", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 3", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 4", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 5", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 6", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 7", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Sponsor 8", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "sponsor" },
+    { "name": "Media 1", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "media" },
+    { "name": "Media 2", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "media" },
+    { "name": "Media 3", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "media" },
+    { "name": "Media 4", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "media" },
+    { "name": "Media 5", "logo": "/assets/img/placeholder-logo.svg", "url": "#", "tier": "media" }
+  ]
+}

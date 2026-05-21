@@ -1,0 +1,15 @@
+{
+  "name": "ronac-by-aquatia",
+  "version": "1.0.0",
+  "description": "RONAC by Aquatia — site concurs (Eleventy + Sveltia CMS)",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.1.0"
+  }
+}

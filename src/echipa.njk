@@ -1,0 +1,54 @@
+---
+layout: base.njk
+permalink: /echipa.html
+title: "Echipa — RONAC by Aquatia 2026"
+description: "Organizatorii și echipa din spatele concursului național de aquascaping RONAC."
+---
+{% from "partials/macros.njk" import pagehead %}
+{{ pagehead('<a href="/">Acasă</a> &nbsp;/&nbsp; Echipa', "Echipa din spatele RONAC", team.intro) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow line">Organizatori</span>
+      <h2 class="h-xl" style="margin:.6rem 0 0">Oamenii care fac concursul posibil</h2></div>
+    <div class="grid grid-3 reveal" style="margin-top:2.4rem">
+      {%- for o in team.organizers -%}
+      <article class="card person reveal">
+        <span class="ornament tl" style="top:8px;left:8px"></span>
+        <img src="{{ o.photo }}" alt="{{ o.name }}">
+        <div class="card__body"><span class="card__meta">{{ o.role }}</span><h3>{{ o.name }}</h3>
+          {% if o.note %}<p style="margin:.4rem 0 0;color:var(--ink-soft);font-size:.92rem">{{ o.note }}</p>{% endif %}
+        </div>
+      </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<div class="folk-rule"></div>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="split__media reveal">
+      <span class="ornament tl"></span><span class="ornament br"></span>
+      <img src="{{ team.aquatiaImage }}" alt="Aquatia">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Powered by</span>
+      <h2 class="h-xl" style="margin:.6rem 0 1rem">{{ team.aquatiaHeading }}</h2>
+      <p class="lead">{{ team.aquatiaLead }}</p>
+      <p>{{ team.aquatiaBody }}</p>
+      <div class="hero__cta" style="margin-top:.4rem">
+        <a class="btn btn--ghost" href="https://aquatia.ro" target="_blank" rel="noopener">aquatia.ro</a>
+        <a class="btn btn--ghost" href="/contact.html">Contact echipă</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cream-2)">
+  <div class="wrap prose reveal">
+    <h2 style="text-align:center">Mulțumiri</h2>
+    <p style="text-align:center;max-width:60ch;margin-inline:auto">{{ team.thanks }}</p>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+---
+layout: base.njk
+permalink: /arhiva.html
+title: "Arhivă — RONAC by Aquatia"
+description: "Arhiva tuturor edițiilor concursului național de aquascaping RONAC: jurați, sponsori, premii și rezultate."
+---
+<section class="pagehead">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Acasă</a> &nbsp;/&nbsp; Arhivă</p>
+    <span class="eyebrow line">Istoria concursului</span>
+    <h1>Arhiva edițiilor RONAC</h1>
+    <p>Fiecare ediție trecută este păstrată integral — jurați, sponsori, premii și galeriile foto ale lucrărilor înscrise.</p>
+  </div>
+</section>
+<div class="folk-band folk-band--ox"></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <a class="edition-card reveal" href="/"><span class="badge-live">Ediția curentă</span>
+        <img src="/assets/img/placeholder-cover-{{ edition.year }}.svg" alt="RONAC {{ edition.year }}">
+        <div class="meta"><div class="ed">În desfășurare</div><div class="yr">{{ edition.year }}</div></div></a>
+      {%- for ed in collections.editions -%}
+      <a class="edition-card reveal" href="{{ ed.url }}">
+        <img src="{{ ed.data.cover }}" alt="RONAC {{ ed.data.year }}">
+        <div class="meta"><div class="ed">{{ ed.data.ordinal }}</div><div class="yr">{{ ed.data.year }}</div></div></a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="wrap reveal">
+    <h2>Următoarea pagină de istorie o scrii tu</h2>
+    <p>Înscrie-te în ediția {{ edition.year }} și intră în galeria RONAC alături de cei mai buni aquascaperi din România.</p>
+    <a class="btn btn--gold" href="{{ site.registerUrl }}">Înscrie-te acum</a>
+  </div>
+</section>

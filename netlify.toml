@@ -1,0 +1,69 @@
+# ============================================================
+#  RONAC by Aquatia — Netlify (Eleventy build)
+# ============================================================
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# --- Redirecturi de la vechiul site WordPress (ronac.ro) ---
+[[redirects]]
+  from = "/acasa-3"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/regulament-2023"
+  to = "/regulament"
+  status = 301
+[[redirects]]
+  from = "/jurati-2025"
+  to = "/jurati"
+  status = 301
+[[redirects]]
+  from = "/sponsori-2023"
+  to = "/sponsori"
+  status = 301
+[[redirects]]
+  from = "/echipa-noastra"
+  to = "/echipa"
+  status = 301
+[[redirects]]
+  from = "/rezultate-2023"
+  to = "/arhiva-2023"
+  status = 301
+[[redirects]]
+  from = "/premii-2023"
+  to = "/arhiva-2023#premii"
+  status = 301
+[[redirects]]
+  from = "/jurati-2023"
+  to = "/arhiva-2023#jurati"
+  status = 301
+[[redirects]]
+  from = "/rezultate-2022"
+  to = "/arhiva-2022"
+  status = 301
+[[redirects]]
+  from = "/rezultate-2021-2"
+  to = "/arhiva-2021"
+  status = 301
+[[redirects]]
+  from = "/galerie-foto"
+  to = "/arhiva-2019"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

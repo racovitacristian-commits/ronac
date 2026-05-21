@@ -1,0 +1,48 @@
+{
+  "intro": "Tot ce trebuie să știi pentru a participa la ediția 2026. Te rugăm să citești cu atenție înainte de înscriere.",
+  "editorNote": "Textul de mai jos este o structură-cadru completă. Înlocuiește valorile marcate (dimensiuni, date, premii) cu cele oficiale ale ediției 2026.",
+  "sections": [
+    {
+      "heading": "1. Cine poate participa",
+      "body": "Concursul este deschis tuturor pasionaților de acvaristică din România, amatori și profesioniști deopotrivă. Înscrierea este gratuită și se face exclusiv online.\n\n- Participare individuală, cu acvariu propriu, amenajat de concurent.\n- Fiecare participant poate înscrie un număr limitat de lucrări (ex.: maximum 2).\n- Lucrările trebuie să fie originale și neînscrise în alte concursuri din aceeași ediție."
+    },
+    {
+      "heading": "2. Categoria — Nature",
+      "body": "Ediția 2026 are o singură categorie: **Nature Aquascaping**. Layout-ul trebuie să recreeze un peisaj natural folosind plante acvatice, hardscape (roci, lemn) și un substrat adecvat."
+    },
+    {
+      "heading": "3. Dimensiuni acceptate",
+      "body": "*Editează după regulamentul oficial.* Acvariile se încadrează, de regulă, pe categorii de volum / lungime:\n\n- Nano — până la 60 cm lungime.\n- Mediu — între 61 și 120 cm.\n- Mare — peste 120 cm."
+    },
+    {
+      "heading": "4. Specificații foto",
+      "body": "- Fotografia frontală, fără ramă vizibilă, capac sau echipamente în cadru.\n- Rezoluție minimă recomandată: 1920 × 1080 px (ideal mai mare).\n- Format JPG/PNG, fără watermark sau text suprapus.\n- Editarea minimă a culorilor este permisă; manipularea care alterează layout-ul real nu."
+    },
+    {
+      "heading": "5. Criterii de jurizare",
+      "body": "Lucrările sunt evaluate de juriul internațional pe baza unor criterii standard de aquascaping:\n\n- Impresia generală și impactul artistic.\n- Compoziția și echilibrul layout-ului.\n- Sănătatea și selecția plantelor.\n- Naturalețea și coerența peisajului recreat.\n- Tehnica și întreținerea acvariului."
+    },
+    {
+      "heading": "9. Drepturi de autor",
+      "body": "Participanții păstrează drepturile asupra lucrărilor, dar acordă organizatorilor dreptul de a folosi fotografiile înscrise în scop de promovare a concursului (website, social media, materiale tipărite), cu menționarea autorului."
+    },
+    {
+      "heading": "10. Dispoziții finale",
+      "body": "Înscrierea în concurs implică acceptarea integrală a prezentului regulament. Organizatorii își rezervă dreptul de a actualiza regulamentul; orice modificare va fi anunțată pe acest site."
+    }
+  ],
+  "registerNote": "Înscrierea se face online, gratuit, completând formularul ediției 2026. Adaugă aici linkul către formularul de înscriere sau platforma folosită.",
+  "calendar": [
+    { "label": "Deschidere înscrieri", "text": "Data de început — de completat." },
+    { "label": "Termen limită", "text": "Ultima zi de trimitere a lucrărilor — de completat." },
+    { "label": "Jurizare", "text": "Perioada de evaluare a juriului." },
+    { "label": "Anunțarea câștigătorilor", "text": "Rezultatele și ceremonia de premiere." }
+  ],
+  "prizes": [
+    { "place": "Locul I", "label": "Marele Premiu" },
+    { "place": "Locul II", "label": "Premiul secund" },
+    { "place": "Locul III", "label": "Premiul trei" },
+    { "place": "Mențiuni", "label": "Premii speciale din partea partenerilor" }
+  ],
+  "pdfUrl": "#"
+}

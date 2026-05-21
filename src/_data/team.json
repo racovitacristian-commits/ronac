@@ -1,0 +1,13 @@
+{
+  "intro": "Concurs organizat de pasionați de acvaristică, dedicați promovării aquascaping-ului în România.",
+  "organizers": [
+    { "name": "Dorin Florian Romaniuc", "role": "Organizator", "note": "Rodo Rodoselada", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Dan Pavelescu", "role": "Organizator", "note": "", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Silviu Man", "role": "Organizator", "note": "", "photo": "/assets/img/placeholder-portrait.svg" }
+  ],
+  "aquatiaHeading": "RONAC × Aquatia",
+  "aquatiaLead": "Începând cu ediția 2026, RONAC este organizat sub umbrela Aquatia — magazin premium de aquascaping — împreună cu Acvarii De Vis, servicii de acvarii la comandă și mentenanță.",
+  "aquatiaBody": "Ne propunem să ducem concursul mai departe: o platformă mai puternică, premii pe măsură și o comunitate tot mai mare de aquascaperi români.",
+  "aquatiaImage": "/assets/img/placeholder-scape.svg",
+  "thanks": "Credit foto, design și suport tehnic — colaboratorilor care au contribuit la edițiile RONAC de-a lungul anilor. Completează aici numele și rolurile pe care vrei să le evidențiezi."
+}

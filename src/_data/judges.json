@@ -1,0 +1,11 @@
+{
+  "intro": "Suntem onorați să avem un juriu format din cei mai buni aquascaperi profesioniști din Europa.",
+  "list": [
+    { "name": "Nume Prenume", "country": "România", "role": "Președinte juriu", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Nume Prenume", "country": "Țară", "role": "Jurat internațional", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Nume Prenume", "country": "Țară", "role": "Jurat internațional", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Nume Prenume", "country": "Țară", "role": "Jurat internațional", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Nume Prenume", "country": "Țară", "role": "Jurat internațional", "photo": "/assets/img/placeholder-portrait.svg" },
+    { "name": "Nume Prenume", "country": "Țară", "role": "Jurat internațional", "photo": "/assets/img/placeholder-portrait.svg" }
+  ]
+}

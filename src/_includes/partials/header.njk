@@ -1,0 +1,38 @@
+{% set navItems = [
+  { label: "Acasă", url: "/" },
+  { label: "Regulament", url: "/regulament.html" },
+  { label: "Jurați", url: "/jurati.html" },
+  { label: "Sponsori", url: "/sponsori.html" },
+  { label: "Echipa", url: "/echipa.html" },
+  { label: "Arhivă", url: "/arhiva.html" },
+  { label: "Contact", url: "/contact.html" }
+] %}
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="topbar__edition">{{ site.topbarText }}</span>
+    <a href="/contact.html">{{ site.contact.email }} · {{ site.contact.location }}</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand" href="/" aria-label="{{ site.brandName }} {{ site.brandSub }} — acasă">
+        <img src="/assets/img/logo-ronac.svg" alt="{{ site.brandName }}">
+        <span class="brand__txt"><b>{{ site.brandName }}</b><span>{{ site.brandSub }}</span></span>
+      </a>
+      <button class="nav__toggle" aria-label="Meniu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <div class="nav__links">
+        {%- for item in navItems -%}
+          {%- set isArchive = (item.url == "/arhiva.html") and ("/arhiva" in page.url) -%}
+          {%- set isActive = (page.url == item.url) or isArchive -%}
+          <a href="{{ item.url }}"{% if isActive %} class="is-active"{% endif %}>{{ item.label }}</a>
+        {%- endfor -%}
+        <a class="btn btn--primary nav__cta" href="{{ site.registerUrl }}">Înscrie-te</a>
+      </div>
+    </nav>
+  </div>
+</header>

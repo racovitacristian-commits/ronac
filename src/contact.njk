@@ -1,0 +1,51 @@
+---
+layout: base.njk
+permalink: /contact.html
+title: "Contact — RONAC by Aquatia"
+description: "Contactează echipa concursului național de aquascaping RONAC pentru înscrieri, sponsorizări și colaborări."
+---
+{% from "partials/macros.njk" import pagehead %}
+{{ pagehead('<a href="/">Acasă</a> &nbsp;/&nbsp; Contact', "Contact", "Întrebări despre înscriere, sponsorizări sau colaborări? Scrie-ne — îți răspundem cât mai repede.") }}
+
+<section class="section">
+  <div class="wrap split" style="align-items:start">
+    <div class="reveal">
+      <span class="eyebrow">Hai să vorbim</span>
+      <h2 class="h-lg" style="margin:.5rem 0 1.4rem">Date de contact</h2>
+      <ul class="contact-info">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <div><b>Email</b><span>{{ site.contact.email }}</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div><b>Telefon</b><span>{{ site.contact.phone }}</span></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Locație</b><span>{{ site.contact.location }}</span></div></li>
+      </ul>
+      <div class="socials" style="margin-top:1.6rem">
+        <a href="{{ site.social.facebook }}" aria-label="Facebook" style="border-color:var(--line-strong);color:var(--ink)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3l.4-3H14V4.2c0-.9.3-1.5 1.6-1.5H17V0h-2.5C12 0 11 1.4 11 3.8V6H8.5v3H11v9h3z"/></svg></a>
+        <a href="{{ site.social.instagram }}" aria-label="Instagram" style="border-color:var(--line-strong);color:var(--ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+
+    <div class="card reveal" style="padding:1.8rem 1.6rem 2rem">
+      <h3 class="h-lg" style="margin-bottom:1rem">Trimite-ne un mesaj</h3>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/multumim.html" class="form">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>Nu completa: <input name="bot-field"></label></p>
+        <div class="row">
+          <div><label for="nume">Nume</label><input id="nume" name="nume" type="text" required></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        </div>
+        <div><label for="subiect">Subiect</label>
+          <select id="subiect" name="subiect">
+            <option>Înscriere în concurs</option>
+            <option>Sponsorizare / parteneriat</option>
+            <option>Presă / media</option>
+            <option>Altă întrebare</option>
+          </select></div>
+        <div><label for="mesaj">Mesaj</label><textarea id="mesaj" name="mesaj" rows="5" required></textarea></div>
+        <button class="btn btn--primary" type="submit">Trimite mesajul
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+  </div>
+</section>

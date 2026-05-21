@@ -1,0 +1,244 @@
+# =====================================================================
+#  RONAC by Aquatia — configurare CMS (Sveltia)
+#  Editezi conținutul la /admin, salvezi -> commit pe GitHub -> Netlify
+#  reconstruiește automat site-ul.
+# =====================================================================
+
+backend:
+  name: github
+  repo: USER/REPO            # <-- COMPLETEAZĂ: ex. alexracovita/ronac
+  branch: main
+  # Worker OAuth gratuit (Cloudflare). Vezi README, secțiunea „Login".
+  base_url: https://sveltia-cms-auth.racovitacristian.workers.dev/   # <-- COMPLETEAZĂ
+
+# Limba interfeței
+locale: ro
+
+# Imaginile încărcate din CMS ajung aici, referite ca /assets/img/...
+media_folder: "src/assets/img"
+public_folder: "/assets/img"
+
+# Mesaje de commit prietenoase
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # -------------------------------------------------------------------
+  - name: pages
+    label: "Pagini & setări"
+    files:
+      # ---- Setări globale ----
+      - name: site
+        label: "Setări site"
+        file: "src/_data/site.json"
+        format: json
+        fields:
+          - { name: title, label: "Titlu site", widget: string }
+          - { name: tagline, label: "Subtitlu / tagline", widget: string }
+          - { name: url, label: "URL site (https://...)", widget: string }
+          - { name: brandName, label: "Nume brand", widget: string }
+          - { name: brandSub, label: "Sub-brand", widget: string }
+          - { name: topbarText, label: "Text bară sus", widget: string }
+          - { name: footerAbout, label: "Text footer (despre)", widget: text }
+          - { name: footerBy, label: "Footer — organizatori", widget: string }
+          - name: contact
+            label: "Contact"
+            widget: object
+            fields:
+              - { name: email, label: "Email", widget: string }
+              - { name: phone, label: "Telefon", widget: string }
+              - { name: location, label: "Locație", widget: string }
+          - name: social
+            label: "Social media"
+            widget: object
+            fields:
+              - { name: facebook, label: "Facebook URL", widget: string, required: false }
+              - { name: instagram, label: "Instagram URL", widget: string, required: false }
+              - { name: youtube, label: "YouTube URL", widget: string, required: false }
+          - { name: registerUrl, label: "Link înscriere", widget: string }
+
+      # ---- Pagina principală / ediția curentă ----
+      - name: edition
+        label: "Pagina principală (ediția curentă)"
+        file: "src/_data/edition.json"
+        format: json
+        fields:
+          - { name: year, label: "An ediție", widget: string }
+          - { name: ordinal, label: "Eticheta ediției (ex. Ediția a VIII-a · 2026)", widget: string }
+          - { name: category, label: "Categorie (ex. Stil Nature)", widget: string }
+          - { name: heroTitlePre, label: "Titlu hero — început", widget: string }
+          - { name: heroTitleEm, label: "Titlu hero — cuvânt evidențiat", widget: string }
+          - { name: heroTitlePost, label: "Titlu hero — final", widget: string }
+          - { name: heroCopy, label: "Text hero", widget: text }
+          - { name: heroImage, label: "Imagine hero", widget: image }
+          - { name: countdownDeadline, label: "Data limită (countdown)", widget: datetime }
+          - name: facts
+            label: "Fapte cheie (4)"
+            widget: list
+            fields:
+              - { name: value, label: "Valoare", widget: string }
+              - { name: label, label: "Etichetă", widget: string }
+          - { name: aboutHeading, label: "Despre — titlu", widget: string }
+          - { name: aboutLead, label: "Despre — intro", widget: text }
+          - { name: aboutBody, label: "Despre — text", widget: text }
+          - { name: aboutImage, label: "Despre — imagine", widget: image }
+          - name: steps
+            label: "Pași participare"
+            widget: list
+            fields:
+              - { name: title, label: "Titlu pas", widget: string }
+              - { name: text, label: "Descriere", widget: text }
+          - { name: prizesNote, label: "Premii — notă", widget: text }
+          - name: prizes
+            label: "Premii (podium homepage)"
+            widget: list
+            fields:
+              - { name: place, label: "Loc (I / II / III)", widget: string }
+              - { name: label, label: "Etichetă premiu", widget: string }
+              - { name: sub, label: "Subtext", widget: string, required: false }
+
+      # ---- Regulament ----
+      - name: regulament
+        label: "Regulament"
+        file: "src/_data/regulament.json"
+        format: json
+        fields:
+          - { name: intro, label: "Intro", widget: text }
+          - { name: editorNote, label: "Notă organizator (opțional)", widget: text, required: false }
+          - name: sections
+            label: "Secțiuni regulament"
+            widget: list
+            fields:
+              - { name: heading, label: "Titlu secțiune", widget: string }
+              - { name: body, label: "Conținut", widget: markdown }
+          - { name: registerNote, label: "Înscriere — text", widget: text }
+          - name: calendar
+            label: "Calendar"
+            widget: list
+            fields:
+              - { name: label, label: "Etapă", widget: string }
+              - { name: text, label: "Detalii", widget: string }
+          - name: prizes
+            label: "Premii (listă)"
+            widget: list
+            fields:
+              - { name: place, label: "Loc", widget: string }
+              - { name: label, label: "Premiu", widget: string }
+          - { name: pdfUrl, label: "Link PDF regulament", widget: string, required: false }
+
+      # ---- Jurați ediția curentă ----
+      - name: judges
+        label: "Jurați (ediția curentă)"
+        file: "src/_data/judges.json"
+        format: json
+        fields:
+          - { name: intro, label: "Intro", widget: text }
+          - name: list
+            label: "Jurați"
+            widget: list
+            summary: "{{fields.name}} — {{fields.country}}"
+            fields:
+              - { name: name, label: "Nume", widget: string }
+              - { name: country, label: "Țară", widget: string }
+              - { name: role, label: "Rol", widget: string }
+              - { name: photo, label: "Fotografie", widget: image }
+
+      # ---- Sponsori ediția curentă ----
+      - name: sponsors
+        label: "Sponsori (ediția curentă)"
+        file: "src/_data/sponsors.json"
+        format: json
+        fields:
+          - { name: intro, label: "Intro", widget: text }
+          - name: list
+            label: "Sponsori"
+            widget: list
+            summary: "{{fields.name}} ({{fields.tier}})"
+            fields:
+              - { name: name, label: "Nume", widget: string }
+              - { name: logo, label: "Logo", widget: image }
+              - { name: url, label: "Website", widget: string, required: false }
+              - name: tier
+                label: "Nivel"
+                widget: select
+                options:
+                  - { label: "Partener principal", value: "principal" }
+                  - { label: "Sponsor", value: "sponsor" }
+                  - { label: "Partener media", value: "media" }
+
+      # ---- Echipa ----
+      - name: team
+        label: "Echipa"
+        file: "src/_data/team.json"
+        format: json
+        fields:
+          - { name: intro, label: "Intro", widget: text }
+          - name: organizers
+            label: "Organizatori"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Nume", widget: string }
+              - { name: role, label: "Rol", widget: string }
+              - { name: note, label: "Notă", widget: string, required: false }
+              - { name: photo, label: "Fotografie", widget: image }
+          - { name: aquatiaHeading, label: "Aquatia — titlu", widget: string }
+          - { name: aquatiaLead, label: "Aquatia — intro", widget: text }
+          - { name: aquatiaBody, label: "Aquatia — text", widget: text }
+          - { name: aquatiaImage, label: "Aquatia — imagine", widget: image }
+          - { name: thanks, label: "Mulțumiri", widget: text }
+
+  # -------------------------------------------------------------------
+  # ARHIVĂ — fiecare ediție trecută e o intrare separată
+  # -------------------------------------------------------------------
+  - name: editions
+    label: "Arhivă ediții"
+    label_singular: "Ediție din arhivă"
+    folder: "src/editions"
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    slug: "{{year}}"
+    summary: "RONAC {{year}} — {{ordinal}}"
+    sortable_fields: [year]
+    fields:
+      - { name: year, label: "An", widget: string, hint: "Ex. 2024. Determină și numele fișierului și URL-ul (/arhiva-2024.html)." }
+      - { name: ordinal, label: "Eticheta ediției", widget: string }
+      - { name: cover, label: "Imagine copertă", widget: image }
+      - { name: hasPrizes, label: "Are secțiune de premii?", widget: boolean, default: true }
+      - { name: editorNote, label: "Notă (opțional)", widget: text, required: false }
+      - { name: body, label: "Despre ediție", widget: markdown }
+      - name: judges
+        label: "Jurați"
+        widget: list
+        summary: "{{fields.name}}"
+        fields:
+          - { name: name, label: "Nume", widget: string }
+          - { name: country, label: "Țară", widget: string }
+          - { name: role, label: "Rol", widget: string, required: false }
+          - { name: photo, label: "Fotografie", widget: image }
+      - name: sponsors
+        label: "Sponsori"
+        widget: list
+        summary: "{{fields.name}}"
+        fields:
+          - { name: name, label: "Nume", widget: string }
+          - { name: logo, label: "Logo", widget: image }
+          - { name: url, label: "Website", widget: string, required: false }
+      - name: prizes
+        label: "Premii"
+        widget: list
+        required: false
+        fields:
+          - { name: place, label: "Loc (I/II/III)", widget: string }
+          - { name: label, label: "Premiu", widget: string }
+          - { name: sub, label: "Subtext", widget: string, required: false }
+      - name: gallery
+        label: "Galerie rezultate"
+        widget: list
+        summary: "{{fields.position}} — {{fields.author}}"
+        fields:
+          - { name: image, label: "Imagine", widget: image }
+          - { name: author, label: "Autor", widget: string }
+          - { name: position, label: "Poziție (ex. Locul 1, #4)", widget: string }

@@ -1,0 +1,21 @@
+{
+  "title": "RONAC by Aquatia",
+  "tagline": "Romanian National Aquascaping Contest",
+  "url": "https://www.ronac.ro",
+  "brandName": "RONAC",
+  "brandSub": "by Aquatia",
+  "topbarText": "★ Ediția 2026 · înscrieri deschise",
+  "footerAbout": "Romanian National Aquascaping Contest — competiția națională dedicată artei aquascaping-ului în stil Nature.",
+  "footerBy": "Organizat de Aquatia & Acvarii De Vis",
+  "contact": {
+    "email": "contact@ronac.ro",
+    "phone": "+40 7XX XXX XXX",
+    "location": "București, România"
+  },
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "youtube": "#"
+  },
+  "registerUrl": "/regulament.html#inscriere"
+}

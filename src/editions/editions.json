@@ -1,0 +1,8 @@
+{
+  "layout": "edition.njk",
+  "tags": "edition",
+  "permalink": "/arhiva-{{ year }}.html",
+  "eleventyComputed": {
+    "title": "RONAC {{ year }} — Arhivă | RONAC by Aquatia"
+  }
+}

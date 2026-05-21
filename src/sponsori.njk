@@ -1,0 +1,49 @@
+---
+layout: base.njk
+permalink: /sponsori.html
+title: "Sponsori — RONAC by Aquatia 2026"
+description: "Sponsorii și partenerii concursului național de aquascaping RONAC 2026."
+---
+{% from "partials/macros.njk" import pagehead, sponsorCell %}
+{{ pagehead('<a href="/">Acasă</a> &nbsp;/&nbsp; Sponsori', "Sponsori &amp; parteneri", sponsors.intro) }}
+
+{% set principal = sponsors.list | where("tier", "principal") %}
+{% set normal = sponsors.list | where("tier", "sponsor") %}
+{% set media = sponsors.list | where("tier", "media") %}
+
+{% if principal.length %}
+<section class="section">
+  <div class="wrap">
+    <div class="tier-title reveal"><span class="lbl">★ Parteneri principali</span></div>
+    <div class="logos cols-3 reveal">{%- for s in principal -%}{{ sponsorCell(s) }}{%- endfor -%}</div>
+  </div>
+</section>
+{% endif %}
+
+<div class="folk-rule"></div>
+
+{% if normal.length %}
+<section class="section">
+  <div class="wrap">
+    <div class="tier-title reveal"><span class="lbl">Sponsori</span></div>
+    <div class="logos cols-4 reveal">{%- for s in normal -%}{{ sponsorCell(s) }}{%- endfor -%}</div>
+  </div>
+</section>
+{% endif %}
+
+{% if media.length %}
+<section class="section" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="tier-title reveal"><span class="lbl">Parteneri media</span></div>
+    <div class="logos cols-5 reveal">{%- for s in media -%}{{ sponsorCell(s) }}{%- endfor -%}</div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section cta-band">
+  <div class="wrap reveal">
+    <h2>Vrei să devii sponsor?</h2>
+    <p>Asociază-ți brandul cu cel mai mare concurs de aquascaping din România și ajunge la o comunitate pasionată de acvaristică.</p>
+    <a class="btn btn--gold" href="/contact.html">Devino partener</a>
+  </div>
+</section>

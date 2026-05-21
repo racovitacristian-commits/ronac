@@ -1,0 +1,10 @@
+# Fallback redirects (dacă netlify.toml nu e folosit)
+/index.html            /                       301
+/acasa-3               /                       301
+/regulament-2023       /regulament             301
+/jurati-2025           /jurati                 301
+/sponsori-2023         /sponsori               301
+/echipa-noastra        /echipa                 301
+/rezultate-2023        /arhiva-2023            301
+/rezultate-2022        /arhiva-2022            301
+/galerie-foto          /arhiva-2019            301
